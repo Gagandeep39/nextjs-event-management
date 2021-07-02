@@ -21,7 +21,9 @@ const EventDetail = () => {
         image={event.image}
         imageAlt={event.title}
       />
-      <EventContent></EventContent>
+      <EventContent>
+        <p>{event.description}</p>
+      </EventContent>
     </Fragment>
   );
 };
