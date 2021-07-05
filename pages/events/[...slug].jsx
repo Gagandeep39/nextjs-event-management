@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import EventList from '../../components/events/event-list';
 import ResultsTitle from '../../components/events/results-title';
 import Button from '../../components/ui/button';
+import ErrorAlert from '../../components/ui/error-alert';
 import { getFilteredEvents } from '../data/dummy-data';
 
 const FilteredEvents = () => {
@@ -25,7 +26,9 @@ const FilteredEvents = () => {
   ) {
     return (
       <Fragment>
-        <p className="center">Invalid Filter data</p>
+        <ErrorAlert>
+          <p>Invalid Filter data</p>
+        </ErrorAlert>
         <div className="center">
           <Button link="/events">Show all events.</Button>
         </div>
@@ -38,7 +41,9 @@ const FilteredEvents = () => {
   if (!filteredEvents || filteredEvents.length === 0) {
     return (
       <Fragment>
-        <p className="center">No Events found with current filter</p>
+        <ErrorAlert>
+          <p>No Events found with current filter</p>
+        </ErrorAlert>
         <div className="center">
           <Button link="/events">Show all events.</Button>
         </div>
